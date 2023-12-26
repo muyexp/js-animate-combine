@@ -1,0 +1,73 @@
+<html>
+<head>
+    <title></title>
+    <style>
+        .transition-item {
+            overflow: hidden;
+            width: 200px;
+            height: 200px;
+            margin: 10px;
+        }
+
+        .transition-item img {
+            width: 200px;
+            height: 200px;
+        }
+    </style>
+</head>
+
+<body>
+<div style="display: flex;">
+    <div class="transition-item">
+        <div><img src="images/my_gege.jpg"></div>
+    </div>
+    <div class="transition-item">
+        <div><img src="images/my_gege.jpg"></div>
+    </div>
+    <div class="transition-item">
+        <div><img src="images/my_gege.jpg"></div>
+    </div>
+    <div class="transition-item">
+        <div><img src="images/my_gege.jpg"></div>
+    </div>
+</div>
+<script src="scripts/md5.min.js"></script>
+<script src="scripts/transition.js"></script>
+<script>
+    const transition = new Transition();
+    const $items = document.querySelectorAll('.transition-item img');
+
+    transition.start({
+        $el: $items[0],
+        duration: '1s',
+        blur: 'in',
+        fade: false,
+        zoom: false,
+        rotate: false,
+        slide: 'bottom'
+    });
+
+    transition.start({
+        $el: $items[1],
+        duration: '1s',
+        rotate: 'out',
+        blur: 'in'
+    });
+
+    transition.start({
+        $el: $items[2],
+        duration: '1s',
+        fade: 'out',
+        blur: 'out'
+    });
+
+    transition.start({
+        $el: $items[3],
+        duration: '1s',
+        fade: true,
+        blur: true,
+        zoom: true
+    });
+</script>
+</body>
+</html>
